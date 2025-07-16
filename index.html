@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week1HW</title>
+    <style>
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      h2 {
+        color: #1964d6;
+        font-weight: bold;
+        font-size: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-bottom: 1px;
+      }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        font-weight: normal;
+        font-size: 35px;
+        margin-top: 1px;
+      }
+      .celcius {
+        font-weight: bold;
+      }
+      ul {
+        list-style: none;
+        padding: 0 450px;
+        text-align: center;
+        display: block;
+      }
+      ul :hover {
+        background-color: rgb(260, 252, 238);
+        border-radius: 10px;
+        transition: all 300ms ease-in-out;
+      }
+      .rain {
+        font-size: 20px;
+        padding: 30px;
+        display: block;
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .qualitive-one {
+        font-family: monospace;
+        color: #4d4c47;
+      }
+      .cloudy {
+        font-size: 20px;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .qualitive-two {
+        font-family: monospace;
+        color: #4d4c47;
+      }
+      .sunny {
+        font-size: 20px;
+        padding: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .qualitive-three {
+        font-family: monospace;
+        color: #4d4c47;
+      }
+      button {
+        text-align: center;
+        color: white;
+        display: block;
+        margin: 0px auto;
+        padding: 16px 25px;
+        background: #1964d6;
+        border-radius: 40px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        transition: all 100ms ease-in-out;
+        border-color: #1964d6;
+        border-style: none;
+        font-size: 16px;
+        border: 1px solid #1964d6;
+      }
+      button:hover {
+        background: white;
+        color: #1964d6;
+        cursor: pointer;
+        border: 1px solid #1964d6;
+      }
+      .name {
+        font-family: monospace;
+        color: #4d4c47;
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌤</h1>
+    <h2>Currently 21° in Tokyo</h2>
+    <h3>
+      13° /
+      <span class="celcius">23°</span>
+    </h3>
+    <ul>
+      <li class="rain">
+        <strong>🌧 Tomorrow </strong>
+        <br />
+        <span class="qualitive-one">
+          10° /
+          <strong>22°</strong>
+        </span>
+      </li>
+      <li class="cloudy">
+        <strong>🌥 Saturday</strong>
+        <div class="qualitive-two">
+          15° /
+          <strong>17°</strong>
+        </div>
+      </li>
+      <li class="sunny">
+        <strong>☀️ Sunday</strong>
+        <div class="qualitive-three">
+          25° /
+          <strong>28°</strong>
+        </div>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <br />
+    <div class="name">Coded by Loren Tonacao</div>
+    <script>
+        function updateHeading(newHeading) {
+            let h1 = document.querySelector("h1");
+            h1.innerHTML = newHeading;
+        }
+
+        function weatherReport() {
+            let city = prompt("What city do you live in?");
+            let weather = prompt("What temperature is it?");
+            let h2 = document.querySelector("h2");
+            h2.innerHTML = `Currently ${weather} °C in ${city}`; 
+            if (weather >= 0) {
+                updateHeading(`🤗`);
+            } else {updateHeading (`🥶`);
+        }
+        }
+        let cityButton = document.querySelector("button");
+        cityButton.addEventListener("click", weatherReport);
+    </script>
+  </body>
+</html>
